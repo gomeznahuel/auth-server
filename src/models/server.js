@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// const CORS = require('cors');
+const CORS = require('cors');
 const { dbConnection } = require('../database/config.db');
 
 class Server {
@@ -14,7 +14,7 @@ class Server {
 
   middlewares() {
     // CORS
-    // this.app.use(CORS());
+    this.app.use(CORS());
 
     // Read and parse body
     this.app.use(express.json());
